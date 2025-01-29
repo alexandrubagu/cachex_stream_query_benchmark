@@ -1,6 +1,4 @@
 defmodule CachexBench.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
@@ -8,8 +6,7 @@ defmodule CachexBench.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: CachexBench.Worker.start_link(arg)
-      # {CachexBench.Worker, arg}
+      {Cachex, [:my_cache]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
